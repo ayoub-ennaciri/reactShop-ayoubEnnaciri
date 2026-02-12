@@ -1,15 +1,13 @@
 import { Route, Routes } from "react-router-dom"
 import Product from "./pages/productPage"
-import { BannerCard } from "./components/bannerCard"
+import { Home } from "./pages/home"
 
 
 function App() {
 
   return (
     <Routes>
-      {/* <Route path="/" element={<Product/>} /> */}
-      <Route path="/" element={<BannerCard/>} />
-
+      <Route path="/" element={<Home/>} />
     </Routes>
   )
 }

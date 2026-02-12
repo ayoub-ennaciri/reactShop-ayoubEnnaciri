@@ -1,13 +1,13 @@
 import React from 'react';
-import Images from "../"
+// import Images from "../"
+import { Footer } from '../../layouts/footer';
+import { BannerCards } from './modules/bannerCards';
 
 export const Home = () => {
     return (
         <>
-            <div className="">
-                <img className="" src="" alt="" />
-                <button className=''></button>
-            </div>
+            <BannerCards/>
+            <Footer/>
         </>
     );
 };
