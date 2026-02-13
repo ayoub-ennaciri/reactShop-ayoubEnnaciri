@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import Images from '../../../constants/images/products';
 import Product from '../../../constants/json/products.json';
 import { FaMinus, FaPlus } from 'react-icons/fa';
+import { motion, AnimatePresence } from "framer-motion";
+import { useParams } from 'react-router-dom';
 
 const Details = () => {
 
+    const [open, setOpen] = useState(false);
     console.log(Product[1].category);
 
-    const id  = 1;
+    const id =useParams().id -1;
 
     const [size ,setSize] = useState(0);
     const [count ,setCount] = useState(0);
@@ -95,8 +97,22 @@ const Details = () => {
                 
                 <div className=" ">
                     <div className="border-t border-gray-300 pt-3 pb-8">
-                        <h5 className='flex items-center pb-3 justify-between font-medium'>Description <span className='text-gray-500'> <FaMinus /></span></h5>
-                        <p   className="text-[.9em] text-gray-500">{Product[id].description}</p>
+                        <h5 onClick={() => setOpen(!open)} className='flex items-center pb-3 justify-between font-medium'>Description <span className='text-gray-500'> <FaMinus /></span></h5>
+
+                        {/* <AnimatePresence>
+                        {onhove (
+                            <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.4 }}
+                            className="overflow-hidden "
+                            >
+                                <p   className="text-[.9em]  text-gray-500">{Product[id].description}</p>
+                            </motion.div>
+                        )}
+                        </AnimatePresence> */}
+
                     </div>
                     <div className="border-t border-gray-300 pt-3 pb-8">
                         <h5 className='flex items-center pb-3 justify-between font-medium'>Additional Information  <span className='text-gray-500'> <FaMinus /></span></h5>
