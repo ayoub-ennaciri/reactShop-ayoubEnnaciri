@@ -8,7 +8,7 @@ const Details = () => {
 
     console.log(Product[1].category);
 
-    const id  = 7;
+    const id  = 1;
 
     const [size ,setSize] = useState(0);
     const [count ,setCount] = useState(0);
